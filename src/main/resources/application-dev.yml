@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:spb2024
+    username: spb2024
+    password:
+  jpa:
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: false
+        web-allow-others: false
