@@ -37,6 +37,9 @@ public class User {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Account account;
 	
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Aposta> apostas;
+	
 	@Column(name="endereco")
 	private String endereco;
 	

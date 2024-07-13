@@ -1,31 +1,34 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.3.1'
-	id 'io.spring.dependency-management' version '1.1.5'
+  id 'java'
+  id 'org.springframework.boot' version '3.1.1'
+  id 'io.spring.dependency-management' version '1.1.0'
 }
 
-group = 'me.nathan'
+group = 'me.dio'
 version = '0.0.1-SNAPSHOT'
-
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
-	}
-}
+sourceCompatibility = '17'
 
 repositories {
-	mavenCentral()
+  mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	runtimeOnly 'com.h2database:h2'
-	runtimeOnly 'org.postgresql:postgresql'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+  implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
+
+  runtimeOnly 'com.h2database:h2'
+  runtimeOnly 'org.postgresql:postgresql'
+  
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.jar {
+  manifest {
+    attributes["Main-Class"] = 'me.nathan.ApiAiJava2024Application'
+  }
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+  useJUnitPlatform()
 }
