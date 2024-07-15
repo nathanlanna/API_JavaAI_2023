@@ -16,3 +16,5 @@ atualmente consta com dois endpoints para consulta:
 GET "/user" 
 
 POST "/user"
+
+Api pode ser testada no endereço: apijavaai2023-production.up.railway.app
